@@ -1,0 +1,474 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=ddevice-width, initial-scale=0.21, maximum-scale=2, minimum-scale=0.21">
+<meta property="og:title" content="unodos" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="unodos.jp/images/og.jpg" />
+<meta property="og:url" content="http://www.unodos.jp/" />
+<meta property="og:site_name" content="unodos">
+<meta property="og:description" content="uno,dos, tres, cuatro" />
+<title>unodos</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/getScrollValue.css">
+<link rel="icon" type="image/x-icon" href="/favicon.png" />
+<link href='http://fonts.googleapis.com/css?family=Lato:Lato:300,400' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="http://typesquare.com/accessor/script/typesquare.js?qd-Bbc8xFVU%3D" charset="utf-8"></script>
+<script type="text/javascript" src="js/jquery-css-transform.js" charset="utf-8"></script>
+<script type="text/javascript" src="js/jquery-animate-css-rotate-scale.js" charset="utf-8"></script>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-2048090-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+
+
+
+<!--test-->
+<script type="text/javascript">
+var n = 0;
+function funcA() {
+    document.write( "uno,dos,tres,cuatro" );
+}
+</script>
+<!--test-->
+
+
+
+<script type='text/javascript'>
+//初期は非表示
+    $("#submenu1").hide();
+
+		
+//スクロールしたら表示
+    $(function () {
+        $(window).scroll(function () {
+            //100pxスクロールしたら
+            if ($(this).scrollTop() > 200) {
+                //フェードインで表示
+                $('#submenu1').fadeIn();
+				$('隠しておいたレイヤー').show();
+            } else {
+                $('#submenu1').fadeOut();
+            }
+        });
+        //ここからクリックイベント
+        $('#submenu1 a').click(function () {
+            $('index,html').animate({
+                scrollTop: 0
+            }, 500);
+            return false;
+        });
+    });
+
+
+
+
+
+//MENU [▼をクリックしたら非表示]
+$(function() {
+	$("#submenu1 .sb00 a").toggle (
+	function() {
+		$("#submenu1 .sb01").fadeIn(200);
+		$("#submenu1 .sb02").fadeIn(200);
+		$("#submenu1 .sb03").fadeIn(200);
+		$("#submenu1 .sb04").fadeIn(200);
+		$("#submenu1 .sb05").fadeIn(200);
+		$("#submenu1 .sb00 a").text("▼"); /*  html書き換え */
+	}, function() {
+		$("#submenu1 .sb01").fadeOut(200);
+		$("#submenu1 .sb02").fadeOut(200);
+		$("#submenu1 .sb03").fadeOut(200);
+		$("#submenu1 .sb04").fadeOut(200);
+		$("#submenu1 .sb05").fadeOut(200);
+		$("#submenu1 .sb00 a").text("▲"); /*  html書き換え */
+	}
+	);
+});
+
+
+
+//MENU クリックしたら非表示[WWW]
+$(function() {
+	$("#submenu1 .sb01 a").click(function() {
+		$(".ot").fadeOut(1000);
+		$(".wb").show();
+	});
+});
+
+
+//MENU クリックしたら非表示[OTHERS]
+$(function() {
+	$("#submenu1 .sb04 a").click(function() {
+		$(".wb").fadeOut(1000);
+		$(".ot").show();
+	});
+});
+
+
+
+//MENU クリックしたら非表示[about]
+$(function() {
+	$("#submenu1 .sb05 a").click(function() {
+	
+	});
+});
+
+
+//MENU クリックしたら非表示[PERSONAL]
+$(function() {
+	$("#submenu1 .sb03 a").click(function() {
+		$(".cm").fadeOut(1000);
+		$(".ps").show();
+	});
+});
+
+//MENU クリックしたら非表示[ALL]
+$(function() {
+	$("#submenu1 .sb02 a").click(function() {
+		$(".ps, .cm, .ot, .wb").fadeIn(1000);
+	});
+});
+
+
+//マウスが乗ったら表示・非表示
+$(document).ready(function(){
+	
+	$(".img_effect").each(function(i) {
+  $(this).delay(i * 100).fadeIn();
+});
+ 
+$("img.a").hover(
+function() {
+$(this).stop().animate({"opacity": "0"}, 300);
+$('.b').animate({"opacity": "1"}, 100);
+$(this).parent().animate({"opacity":'1',"rotate":'360deg',"scale":'1'},1000,'linear');
+
+},
+function() {
+$(this).stop().animate({"opacity": "1"}, 300);
+$(this).parent().css({"opacity":'1',"rotate":'0',"scale":'10'},1000,'linear');
+});
+
+});
+
+
+//マウスがのった場合
+
+
+
+
+//画像を読み込んだら表示する
+$(function () {
+     $('.imgBox img').hide();//ページ上の画像を隠す
+		$('.b').animate({"opacity": "0"}, 0);
+		$("#submenu1 .sb01").fadeOut(200);
+		$("#submenu1 .sb02").fadeOut(200);
+		$("#submenu1 .sb03").fadeOut(200);
+		$("#submenu1 .sb04").fadeOut(200);
+		$("#submenu1 .sb05").fadeOut(200);
+});
+ 
+var i = 0;
+var int=0;
+$(window).bind("load", function() {//ページコンテンツのロードが完了後、機能させる
+     var int = setInterval("doThis(i)",20);//フェードするスピード
+		 
+});
+ 
+function doThis() {
+     var images = $('img').length;//画像の数を数える
+     if (i >= images) {// ループ
+          clearInterval(int);//最後の画像までいくとループ終了
+    }
+    $('img:hidden').eq(0).fadeIn(200);//一つずつ表示する
+    i++;
+}
+
+
+
+
+</script>
+</head>
+<body>
+<div id="rap">
+<div id="header">
+<div class="name">Ichiro Aikawa<br />Designer / Art Director</div>
+<div class="about">First Ten Thousand Pixels: Works 1999-2013<br />This is Beta Version, Work in Progress!</div>
+<div class="email">info {a} unodos.jp<br /><a href="http://twitter.com/unodon" target="_blank">Twitter</a> | <a href="https://www.facebook.com/uno.dos" target="_blank">Facebook</a> | <a href="http://gifjpgpng.tumblr.com" target="_blank">Tumblr</a></div>
+</div>
+
+<div id="submenu1">
+<div class="sb00"><a class="mark" href="javascript:void(0);" />▼</a> © 2013 </div>
+<div class="sb01"><a href="javascript:void(0);" />www</a></div>
+<div class="sb02"><a href="javascript:void(0);" />all</a></div>
+<div class="sb03"><a href="javascript:void(0);" />personal</a></div>
+<div class="sb04"><a href="javascript:void(0);" />others</a></div>
+<div class="sb05"><a href="javascript:void(0);" />about</a></div>
+</div>
+
+<div class="content">
+
+<div class="asciiart"></div>
+
+<div class="imgBox img01 wb cm">
+<img src="images/ms1.jpg" width="560" alt="Microsoft atLife" class="a" />
+<div class="b fnt32 c_wht"><span class="uline2">Microsoft atLife</span><br />Microsoft内のatHome、atWork、uMallといったサイトを統合し、新しく生まれ変わったポータルサイト。このサイトでは毎日のその時々で役に立つ Microsoft 製品のTIPSやテンプレートなど使い方を紹介。2012年に新しくなったMicrosoft社のCIに合わせている。</div>
+</div>
+
+<div class="imgBox img02 wb cm">
+  <img src="images/holyplace.gif" width="490" alt="My Holy Place こころの聖地" class="a" />
+  <div class="b fnt24 c_green1"><span class="uline2">My Holy Place</span><br />iPhone用お祈りアプリ「My Holy Place こころの聖地」Web及びUIのデザイン。</div>
+</div>
+
+<div class="imgBox img03 wb cm">
+<img src="images/sc1.jpg" alt="Microsoft atLife" class="a" />
+<div class="b fnt18 c_wht"><span class="uline1">SmartConvert</span><br />スマホ変換サービス「スマートコンバート」のサイト。レスポンシブデザインを採用。</div>
+</div>
+
+<div class="imgBox img57 wb cm">
+<img src="images/schick.jpg" width="210" alt="Schick" class="a" />
+<div class="b fnt14 c_wht"><span class="uline1">Schick</span><br />シェービングクリーム「Shaveguard」のサイト。デザイン、企画担当。</div>
+</div>
+
+<div class="imgBox img05 wb cm">
+<img src="images/au1.jpg" alt="au Jibungao Family" class="a" />
+<div class="b fnt24 c_wht"><span class="uline2">au じぶんがお家族</span><br />「auスマートバリュー」体験コンテンツ。自分の写真をWEBカメラやFacebookからアップすると同じ顔をした家族のビジュアルが増え、スマートバリューを利用するとどれくらいおトクで楽しいかをコミカルに表現している。</div>
+<img src="images/h_au1.gif" alt="au Jibungao Family" />
+</div>
+
+
+<div class="imgBox img06 wb cm"><img src="images/au2.jpg" alt="au Jibungao Family" class="a" />
+<div class="b c_orange fnt14"><span class="uline1">au じぶんがお家族</span><br />
+WebカメラやFacebookから画像をアップすると自分の顔をした家族が生成され、スクロールするとどんどん増えていく。アップした画像によっては思わぬ効果もありおもしろい。</div>
+</div>
+
+<div class="imgBox img07 wb cm">
+<img src="images/au3.gif" alt="au Jibungao Family 1person"  class="a" />
+<div class="b c_wht fnt18"><span class="uline1">au じぶんがお家族</span><br />１人家族（兄）。スクロールしていくと「のっぺらぼう」の状態からカメラのシャッター後にじぶんがおで記念撮影。</div>
+</div>
+
+<div class="imgBox img08 wb cm">
+<img src="images/au4.jpg" alt="au Jibungao Family 2person" class="a" />
+<div class="b c_wht fnt18"><span class="uline1">au じぶんがお家族</span><br />2人家族。スクロール途中にケーキがたくさんが降ってくる。各エンディングでは金額に応じたおトク感とシチュエーションを描写している。</div>
+</div>
+
+<div class="imgBox img09 wb cm">
+<img src="images/au5.gif" alt="au Jibungao Family 6person" class="a" />
+<div class="b fnt18 c_wht"><span class="uline1">au じぶんがお家族</span><br />6人家族は肖像画。ここではキャンバス生地への合成を試みている。</div>
+</div>
+
+<div class="imgBox img10 wb cm">
+<img src="images/au6.gif" alt="au Jibungao Family 10 person" class="a" />
+<div class="b fnt24 c_wht"><span class="uline1">au じぶんがお家族</span><br />ラストは10人家族でフスマを開くと、ひょっとこ、ロリータ、巨乳など、本当に家族なのかといえる面々が泥酔状態でお祭り騒ぎ。</div>
+</div>
+
+<div class="imgBox img11 wb cm">
+<img src="images/au7.jpg" alt="au Jibungao Family ending" class="a" />
+<div class="b fnt14 c_wht"><span class="uline1">au じぶんがお家族</span><br />最後までスクロールするとトップページに出ていた案内係のお姉さんが自分の顔になるというオチ。「別の顔でやってみる」をクリックすると一番上まで一気にスクロールする。</div>
+</div>
+
+<div class="imgBox img12 ot ps">
+<img src="images/card.jpg" alt="Business Card" class="a" />
+<div class="b fnt32 c_purple"><span class="uline2">Business Card</span><br />これまでに制作した自身の名刺。</div>
+</div>
+
+<div class="imgBox img24 ot cm">
+<img src="images/knit1.jpg" alt="mayumi torio" class="a" />
+<div class="b fnt32 c_wht"><span class="uline2">Mayumi Torio </span><br />2010-11A/W HEARTニットワンピースの刺繍部分のグラフィックをデザイン。コード刺繍を意識して波のパターンを作成。</div>
+</div>
+
+<div class="imgBox img25 ot cm">
+<img src="images/knit2.jpg" alt="mayumi torio" class="a" />
+<div class="b fnt32 c_wht"><span class="uline1">Mayumi Torio</span><br />2010-11A/W HEART ニットワンピースの刺繍部分のグラフィックをデザイン。</div>
+</div>
+
+
+<div class="imgBox img23 ot ps">
+<img src="images/tshirt2.jpg" alt="alt desinal shirt black" class="a" />
+<div class="b fnt24 c_wht"><span class="uline2">Rich Black Flag Tshirt</span><br />ハードコアバンド「Black Flag」のロゴを増殖したTshirt。当初のコンセプトではブラウザ上でロゴの四角いところを好きなだけ生成し画像で出力、Wearable Webなどで物体化することを想定していたがリアルなTシャツとなった。</div>
+</div>
+
+<div class="imgBox img22 ot ps">
+<img src="images/tshirt1.jpg" alt="alt desinal shirt white" class="a" />
+<div class="b fnt14"><span class="uline1">Rich Black Flag Tshirt</span><br />Black Flagのロゴを増殖したTshirt。ALT DENIAL SHIRTの非売品アイテム。</div>
+</div>
+
+
+<div class="imgBox img51 wb ps"><img src="images/tumblr1.gif" alt="tumblr1" class="a" />
+<div class="b fnt18 c_wht"><span class="uline1">tumblr1</span> <br />画像をタイル上に並べたオリジナルのTheme。 書籍「Designing Tumblr デザイニング・タンブラー」に解説が出ている。</div>
+</div>
+
+<div class="imgBox img19 wb ps">
+<img src="images/cart1.jpg" alt="cartcobain" class="a" />
+<div class="b c_wht fnt24"><span class="uline1">Cart Cobain</span><br />Kurt CobainのKurtを「Cart」と間違って検索した人が偶然辿り着くサイト。個人作品。<br /></div>
+</div>
+
+<div class="imgBox img20 wb ps">
+<img src="images/cart2.jpg" alt="mc-cart-ney" class="a" />
+<div class="b fnt14 c_wht"><span class="uline1">Paul Mc-Cart-ney</span><br />Cartシリーズ。先日Nirvanaにポールマッカートニー参加というショッキングなニュースがあったが、実はすでに「CART」で繋がっていた。</div>
+</div>
+
+<div class="imgBox img21 wb ps">
+<img src="images/cart3.jpg" alt="rin-go" class="a" />
+<div class="b fnt14 c_wht"><span class="uline1">Rin-Go Starr</span><br />こちらはmc-cart-neyの「CART」ボタンからrin-goの「GO」へとビートルズ生存組でリンクしている。</div>
+</div>
+
+<div class="imgBox img52 ps wb">
+<img src="images/cart4.jpg" alt="cartrussell" class="a" />
+<div class="b fnt12 c_wht"><span class="uline1">Cart Russell</span><br />KurtとCartを間違ったスペルで検索し、Escape from Searchしてきた人が辿り着くサイト。</div>
+</div>
+
+
+<div class="imgBox img13 wb cm">
+<img src="images/dv1.jpg" alt="glaceau Vitamin Water Daily Vitamins" class="a" />
+<div class="b fnt40 c_wht"><span class="uline1">daily vitamins</span><br />欧米で海外セレブを中心に大ヒットした「glaceau vitamin water」、日本発売時のキャンペーンサイト。「全力でヒマをつぶしにいきます」のスローガンどおり、コラムやマンガなどのヒマつぶし系コンテンツを集めたサイト。リキッドレイアウトを採用。現在は「モダンファート」という別のサイトとして存続している。</div>
+</div>
+
+<div class="imgBox img14 wb cm">
+<img src="images/dv2.jpg" alt="glaceau Vitamin Water Daily Vitamins kodomo hipphop" class="a" />
+<div class="b fnt32"><span class="uline1">daily vitamins<br /></span>daily vitaminsのコンテンツページ。ラッパーのイルリメによる漫画「ヒップホップっこども新聞」。
+デタラメな感じのタイトルだったので某新聞を雑な感じにサンプリングしてみた。</div>
+</div>
+
+<div class="imgBox img15 wb cm">
+<img src="images/dv3.jpg" alt="glaceau Vitamin Water Daily Vitamins sado" class="a" />
+<div class="b fnt18"><span class="uline1">daily vitamins</span><br />マンガ家 タナカカツキによるサウナ体験記「サ道」の タイトル画像。サ道の部分が温泉マーク、まわりの水色の部分ではサウナの仕組みを漢字（石、熱、霧、汗）で表している。<br /></div>
+</div>
+
+<div class="imgBox img16 wb cm">
+<img src="images/dv4.jpg" alt="glaceau Vitamin Water Daily Vitamins kankan" class="a" />
+<div class="b fnt18"><span class="uline1">daily vitamins</span><br />daily vitamins 元編集長 伊藤ガビン（現Modern Fart ファートディレクター）の「閑閑日記」タイトル画像。</div>
+</div>
+
+<div class="imgBox img17 ot cm">
+<img src="images/dv5.jpg" alt="glaceau Vitamin Water Daily Vitamins sticker" class="a" />
+<div class="b fnt24"><span class="uline1">daily vitamins</span><br />サイトのプロモーション用に作ったステッカー。</div>
+</div>
+
+<div class="imgBox img18 wb cm">
+<img src="images/dv6.jpg" alt="glaceau Vitamin Water Daily Vitamins free sozai" class="a" />
+<div class="b fnt40"><span class="uline2">daily vitamins</span><br />写真家 池田晶紀による「自由すぎるフリー素材集 中学生編」のタイトル画像。撮りおろしの写真素材集だが用途が謎なため、このタイトルで使わないと出番がないと思い素材集の写真を自由に加工して制作。パンチの効いた中学生風の写真を探している方は是非！</div>
+</div>
+
+
+<div class="imgBox img48 ps ot"><img src="images/hifi1.jpg" alt="hi-fidelity sticker black" class="a" />
+<div class="b c_wht fnt24"><span class="uline1">Hi Fidelity Sticker Black</span><br />昔のレコードジャケットに表記してあるStereoやHi-fiなどのロゴを集めて作った個人制作のステッカー。</div>
+</div>
+
+<div class="imgBox img49 ps ot"><img src="images/hifi2.jpg" alt="hi-fidelity sticker  white" class="a" />
+<div class="b fnt18"><span class="uline1">Hi Fidelity Sticker White</span><br />昔のレコードジャケットに表記してあるStereoやHi-fiなどのロゴを集めて作ったステッカー。ステレオだけに白と黒で対になるよう2種類用意した。</div>
+</div>
+
+<div class="imgBox img26 ps wb"><img src="images/tumblr2.jpg" alt="tumblr" class="a" />
+<div class="b fnt18 c_wht"><span class="uline1">tumblr2</span><br />大量のGIFアニを重ね、その下に画像をタイルしたTumblr Theme。ネット文化とEvan Rothの作品「C.R.E.A.M.」へのオマージュ。</div></div>
+
+
+<div class="imgBox img47 wb ps"><img src="images/pf.jpg" alt="online portfolio" class="a" />
+<div class="b fnt32 c_wht"><span class="uline2">Portfolio</span><br />2006-12年までのポートフォリオサイト。</div>
+</div>
+
+<div class="imgBox img46 wb ps"><img src="images/unodos.gif" alt="unodos" class="a" />
+<div class="b fnt32 c_wht"><span class="uline2">unodos</span><br />個人サイト。Flashに自作フォントをたくさん埋め込んだ前のバージョン。</div>
+</div>
+
+
+<div class="imgBox img50 wb ps"><img src="images/blog.jpg" alt="blog" class="a" />
+<div class="b fnt32"><span class="uline1">Blog</span><br />個人ブログ。ブログパーツ(Widget)を「BLOG」と見えるように並べ、「L」のところに記事の抜粋を表示している。</div>
+</div>
+
+<div class="imgBox img27 wb cm"><img src="images/marefumi1.jpg" alt="marefumi komura" class="a" />
+<div class="b fnt40 c_wht"><span class="uline2">Marefumi Komura</span><br />画家「小村稀史」のサイト。作品の持つ力が強かったので、インパクトが伝わるようブラウザ内を作品で覆うようにデザイン。</div></div>
+
+<div class="imgBox img28 wb cm"><img src="images/marefumi2.jpg" alt="marefumi komura" class="a" />
+<div class="b fnt32 c_wht"><span class="uline1">Marefumi Komura</span><br />画家「小村稀史」のサイト。作品一覧ページ。彼の作品は良いので是非見てもらいたい。</div></div>
+
+<div class="imgBox img29 wb cm"><img src="images/kyoto.jpg" alt="kyoto zokei" class="a" />
+<div class="b fnt24"><span class="uline1">Kyoto University of Art and Design</span><br />京都造形芸術大学のサイト。下層ページのデザインを約300ページほど量産。ADは別の制作会社。<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /></div></div>
+
+<div class="imgBox img30 wb cm"><img src="images/spaceshower1.jpg" alt="spaceshower tv" class="a" />
+<div class="b fnt18 c_wht"><span class="uline1">SPACE SHOWER TV</span><br />SpaceshowerTV 20周年記記念サイト。20周年記念のスペシャル動画や関連番組の紹介、沿革を紹介するサイト。</div></div>
+
+<div class="imgBox img31 wb cm"><img src="images/spaceshower2.jpg" alt="spacewhower tv" class="a" />
+<div class="b fnt24 c_wht"><span class="uline1">SPACE SHOWER TV</span><br />2010年度の年間ベストミュージック・ビデオを決める Video Music Awardsのサイト。</div></div>
+
+<div class="imgBox img32 wb cm"><img src="images/valuenavi.jpg" alt="valuenavi" class="a" />
+<div class="b fnt18"><span class="uline1">valuenavi</span><br />学研のショッピングサイト。GetNaviやWatchNaviの編集者がセレクトした商品を紹介している。</div>
+</div>
+
+<div class="imgBox img33 ps ot"><img src="images/font.gif" alt="font" class="a" />
+<div class="b fnt24 c_wht"><span class="uline1">Original Font</span><br />過去に制作した自作フォント。</div>
+</div>
+
+<div class="imgBox img34 wb cm"><img src="images/klap1.jpg" alt="klap" class="a" />
+<div class="b fnt40 c_wht"><span class="uline1">Klap</span><br />Sega Sammy Mediaが運営するインターネットラジオ局「Klap」。90年代深夜ラジオのノリを狙った番組が多くサブカル感を出しつつ、大衆紙の中吊り広告と番組表を交ぜたようなデザイン。アートディレクション担当。</div>
+</div>
+
+<div class="imgBox img35 wb cm"><img src="images/klap2.jpg" alt="klap" class="a" />
+<div class="b fnt24"><span class="uline1">Klap</span><br />インターネットラジオ局「Klap」ポッドキャストページ。iTunesのPodcastランキングでカテゴリー1位になった番組もあり健闘した。</div>
+</div>
+
+<div class="imgBox img36 wb cm"><img src="images/klap3.jpg" alt="klap" class="a" />
+<div class="b fnt18 c_pink3"><span class="uline1">Klap</span><br />「番組公式サイト「デジカメゾンドスズキ」。制作ディレクション及びデザインを担当、ADは別のデザイナー。並行して制作していたSNSの仕様をカスタマイズしたデザイン。</div>
+</div>
+
+<div class="imgBox img37 wb cm"><img src="images/klap4.gif" alt="klap" class="a" />
+<div class="b fnt14 c_wht"><span class="uline1">Klap</span><br />インターネットラジオ「Klap」の番組サイト各種。別で進行していたSNSの仕様に基づきカスタマイズ版を3番組、簡易フォーマットを5番組制作。主に制作ディレクションを担当（一部デザイン）。</div>
+</div>
+
+<div class="imgBox img40 ps ot"><img src="images/atipika2.jpg" alt="atipikaJapan" class="a" />
+<div class="b c_wht fnt40"><span class="uline1">AtipikaJapan</span><br />スペインのデザインスタジオatipikaのプロジェクト「AtipikaJapan」<br />以前作ったTshirtsをまとめた作品ページ。</div>
+</div>
+
+<div class="imgBox img39 ps ot"><img src="images/atipika1.jpg" alt="atipikaJapan" class="a" />
+<div class="b c_wht fnt40"><span class="uline1">AtipikaJapan</span><br />スペインのデザインスタジオatipikaのプロジェクト「AtipikaJapan」に掲載予定だったコラージュを使ったグラフィック作品。</div>
+</div>
+
+
+<div class="imgBox img41 ps wb"><img src="images/at2000.jpg" alt="at2000 Tshirts" class="a" />
+<div class="b fnt24 c_wht"><span class="uline1">Home Page</span><br />かつて運用していた個人サイト。Tshirtsをメインに見せている2002年のバージョン。</div>
+</div>
+
+<div class="imgBox img42 ps wb"><img src="images/at2000_1.jpg" alt="at2000 1999" class="a" />
+<div class="b fnt24 c_wht"><span class="uline1">1999</span><br />複数のポップアップウィンドウ間でFlashのアニメーションをシンクロさせたコンテンツ。</div>
+</div>
+
+<div class="imgBox img43 ps wb"><img src="images/at2000_2.jpg" alt="at2000 1999 THE THING" class="a" />
+<div class="b fnt18 c_wht"><span class="uline1">1999</span><br />複数のウィンドウ間でアニメーションを同期させた個人作品。ユーザーが先を読めない展開により新しい体験を提供している。ポップアップウィンドウ＝悪だった時代の賜物といえるが、別ウインドウが開きまくるネット文明が途絶えた今、同じ体験は提供できないであろう。</div>
+</div>
+
+<div class="imgBox img44 ps wb"><img src="images/at2000_3.jpg" alt="at2000 2000" class="a" />
+<div class="b fnt18 c_wht"><span class="uline1">1998</span><br />ポップアップウィンドウ作品。当時は800x600が主流だったこともあり「2000」の文字を重ねて抜いたように見せている。</div>
+</div>
+
+
+
+<div class="imgBox img53 ps wb"><img src="images/at2000_5.jpg" alt="at2000 206 1535" class="a" />
+<div class="b fnt14"><span class="uline1">206</span><br />ポップアップウインドウ作品。GOクリックすると↓のように展開。</div>
+</div>
+
+<div class="imgBox img54 ps wb"><img src="images/at2000_6.jpg" alt="at2000 206 building" class="a" />
+<div class="b fnt18 c_wht"><span class="uline1">206</span><br />ブラウザが開いたり閉じたりし、自動スクロールや大きさが変わったりしながら展開していくコンテンツ。→に続く。</div>
+</div>
+
+<div class="imgBox img55 ps wb"><img src="images/at2000_7.gif" alt="at2000 206 room" class="a" />
+<div class="b fnt18 c_wht"><span class="uline1">206</span><br />この作品では外から建物に入り階段を登って部屋に入ってまた外に出て階段から落ちるさまを複数のポップアップウィンドウを通して表現している。</div>
+</div>
+
+
+</div>
+
+<div id="footer">
+<p></p>
+</div>
+
+</div>
+</body>
+</html>

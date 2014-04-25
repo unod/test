@@ -1,0 +1,508 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=0.21, maximum-scale=2, minimum-scale=0.21">
+<meta property="og:title" content="unodos" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="unodos.jp/images/og.jpg" />
+<meta property="og:url" content="http://www.unodos.jp/" />
+<meta property="og:site_name" content="unodos">
+<meta property="og:description" content="uno,dos, tres, cuatro" />
+<meta name="description" content="unodos.jp">
+<meta name="description" content="unodos, First Ten Thousand Pixels: Works 1999-2014" />
+<meta name="keywords" content="internet," />
+
+<title>unodos</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+<link rel="stylesheet" href="style1.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/getScrollValue.css">
+<link rel="icon" type="image/x-icon" href="/favicon.png" />
+<link href='http://fonts.googleapis.com/css?family=Lato:Lato:300,400' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,300,400,600' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/jquery-css-transform.js" charset="utf-8"></script>
+<script type="text/javascript" src="js/jquery-animate-css-rotate-scale.js" charset="utf-8"></script>
+<script type='text/javascript' src='js/jquery.modal.js'></script>
+<script type='text/javascript' src='js/site.js'></script>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-2048090-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+
+
+
+<!--test-->
+<script type="text/javascript">
+var n = 0;
+function funcA() {
+    document.write( "uno,dos,tres,cuatro" );
+}
+</script>
+<!--test-->
+
+
+
+<script type='text/javascript'>
+//初期は非表示
+    $("#submenu1").hide();
+
+		
+//スクロールしたら表示
+    $(function () {
+        $(window).scroll(function () {
+            //100pxスクロールしたら
+            if ($(this).scrollTop() > 200) {
+                //フェードインで表示
+                $('#submenu1').fadeIn();
+				$('隠しておいたレイヤー').show();
+            } else {
+                $('#submenu1').fadeOut();
+            }
+        });
+        //ここからクリックイベント
+        $('#submenu1 a').click(function () {
+            $('index,html').animate({
+                scrollTop: 0
+            }, 500);
+            return false;
+        });
+    });
+
+
+
+
+
+//MENU [▼をクリックしたら非表示]
+$(function() {
+	$("#submenu1 .sb00 a").toggle (
+	function() {
+		$("#submenu1 .sb01").fadeIn(200);
+		$("#submenu1 .sb02").fadeIn(200);
+		$("#submenu1 .sb03").fadeIn(200);
+		$("#submenu1 .sb04").fadeIn(200);
+		$("#submenu1 .sb00 a").text("▼"); /*  html書き換え */
+	}, function() {
+		$("#submenu1 .sb01").fadeOut(200);
+		$("#submenu1 .sb02").fadeOut(200);
+		$("#submenu1 .sb03").fadeOut(200);
+		$("#submenu1 .sb04").fadeOut(200);
+		$("#submenu1 .sb00 a").text("▲"); /*  html書き換え */
+	}
+	);
+});
+
+
+
+//MENU クリックしたら非表示[WWW]
+$(function() {
+	$("#submenu1 .sb01 a").click(function() {
+		$(".ot").fadeOut(1000);
+		$(".wb").show();
+	});
+});
+
+
+
+
+//MENU クリックしたら非表示[PERSONAL]
+$(function() {
+	$("#submenu1 .sb02 a").click(function() {
+		$(".cm").fadeOut(1000);
+		$(".ps").show();
+	});
+});
+
+//MENU クリックしたら非表示[ALL]
+$(function() {
+	$("#submenu1 .sb03 a").click(function() {
+		$(".ps, .ot, .cm, .wb").fadeIn(1000);
+	});
+});
+
+
+//マウスが乗ったら表示・非表示
+$(document).ready(function(){
+	
+	$(".img_effect").each(function(i) {
+  $(this).delay(i * 100).fadeIn();
+});
+ 
+$("img.a").hover(
+function() {
+$(this).stop().animate({"opacity": "0"}, 300);
+$('.b').animate({"opacity": "1"}, 100);
+$(this).parent().animate({"opacity":'1',"rotate":'360deg',"scale":'1'},1000,'linear');
+
+},
+function() {
+$(this).stop().animate({"opacity": "1"}, 300);
+$(this).parent().css({"opacity":'1',"rotate":'0',"scale":'10'},1000,'linear');
+});
+
+});
+
+
+//マウスがのった場合
+
+
+
+
+//画像を読み込んだら表示する
+$(function () {
+     $('.imgBox img').hide();//ページ上の画像を隠す
+		$('.b').animate({"opacity": "0"}, 0);
+		$("#submenu1 .sb01").fadeOut(200);
+		$("#submenu1 .sb02").fadeOut(200);
+		$("#submenu1 .sb03").fadeOut(200);
+		$("#submenu1 .sb04").fadeOut(200);
+});
+ 
+var i = 0;
+var int=0;
+$(window).bind("load", function() {//ページコンテンツのロードが完了後、機能させる
+     var int = setInterval("doThis(i)",20);//フェードするスピード
+		 
+});
+ 
+function doThis() {
+     var images = $('img').length;//画像の数を数える
+     if (i >= images) {// ループ
+          clearInterval(int);//最後の画像までいくとループ終了
+    }
+    $('img:hidden').eq(0).fadeIn(200);//一つずつ表示する
+    i++;
+}
+
+
+
+
+</script>
+</head>
+<body>
+<div id="rap">
+<div id="header">
+<div class="name">Ichiro Aikawa<br />Art Director / Web Designer</div>
+<div class="about">First Ten Thousand Pixels: Works 1999-2014. Work in Progress!<br /><a class="modalLink" href="#modal1" />>About</a></div>
+<div class="email">info {a} unodos.jp<br /><a href="http://twitter.com/unodon" target="_blank">Twitter</a> | <a href="https://www.facebook.com/uno.dos" target="_blank">Facebook</a> | <a href="http://gifjpgpng.tumblr.com" target="_blank">Tumblr</a></div>
+</div>
+
+<div id="submenu1">
+<div class="sb00"><a class="mark" href="javascript:void(0);" />▲</a> © 2014 </div>
+<div class="sb01"><a href="javascript:void(0);" />www</a></div>
+<div class="sb02"><a href="javascript:void(0);" />personal</a></div>
+<div class="sb03"><a href="javascript:void(0);" />all</a></div>
+<div class="sb04"><a class="modalLink" href="#modal1" />about</a></div>
+</div>
+
+
+
+<div id="modal1" class="modal">
+<p class="closeBtn">x</p>
+<br /><br />
+Ichiro Aikawa, is an independent Art Director / Web Designer in Tokyo Japan.<br />
+Primary focus Web + Graphic Design, Internet releated matters, etc.<br />
+<br />
+I am currently accepting project requests, please email for inquires.<br />
+<br />
+<br />
+<br />
+Contact:<br />
+<h2>info{a}unodos.jp</h2>
+<br />
+<br />
+<br />
+</div>
+
+
+<div class="content">
+
+<div class="asciiart"></div>
+
+<div class="ola">
+OLA! <br />
+HELLLO!<br />
+こんにちは!<br />
+</div>
+
+<div class="imgBox img01 wb cm">
+<img src="images/ms1.jpg" width="560" alt="Microsoft atLife" class="a" />
+<div class="b fnt40 c_wht"><span class="uline2">Microsoft atLife</span><br />
+Microsoft Portal Site, features tips, templates, and product news. Integrated previous portal sites, atWork, uMall, and atHome with new brand idetity. <br />
+<span class="italic">Role: Design</span>
+</div>
+</div>
+
+<div class="imgBox img04 wb cm">
+<img src="images/nocon.gif" width="350" alt="No Continue Kid" class="a" />
+<div class="b fnt14 c_wht"><span class="uline2">No Continue Kid</span><br />
+Title Images for "No Continue Kid" Website. Parody of vintage games with respect.<br />
+<span class="italic">Role: Design</span>
+</div>
+</div>
+
+<div class="imgBox img02 wb cm">
+  <img src="images/holyplace.gif" width="490" alt="My Holy Place こころの聖地" class="a" />
+  <div class="b fnt24 c_green1"><span class="uline2">My Holy Place</span><br />
+iPhone Application a.k.a. Smartphone Oasis, for those survive in the concrete jungle. The Compass shows your personal holy place.<br />
+<span class="italic">Role: Web design, portion of UI Design.</span></div>
+</div>
+
+<div class="imgBox img03 wb cm">
+<img src="images/sc1.jpg" alt="Microsoft atLife" class="a" />
+<div class="b fnt18 c_wht"><span class="uline1">SmartConvert</span><br />
+Website for "Smart Convert, a smartphone convert service. Used responsive design.<br />
+<span class="italic">Role: Design</span></div>
+</div>
+
+<div class="imgBox img57 wb cm">
+<img src="images/schick.jpg" width="210" alt="Schick" class="a" />
+<div class="b fnt14 c_wht"><span class="uline1">Schick</span><br />Website for Shaving foam "Shaved Guard"<br />
+<span class="italic">Role: Design and Planning</span></div>
+</div>
+
+<div class="imgBox img05 wb cm">
+<img src="images/au1.jpg" alt="au Jibungao Family" class="a" />
+<div class="b fnt28 c_wht"><span class="uline2">au Jibungao Family</span><br />
+A web content for au's service "Smartvalue". Uploading picture of yourself via webcam or facebook, Illustraetd picture of its face as family increase as scroll.<br />
+<span class="italic">Role: Art Direction</span></div>
+<img src="images/h_au1.gif" alt="au Jibungao Family" />
+</div>
+
+
+<div class="imgBox img06 wb cm"><img src="images/au2.jpg" alt="au Jibungao Family" class="a" />
+<div class="b c_orange fnt18"><span class="uline1">au Jibungao Family</span><br />WebCam upload page<br />
+</div>
+</div>
+
+<div class="imgBox img07 wb cm">
+<img src="images/au3.gif" alt="au Jibungao Family 1person"  class="a" />
+<div class="b c_wht fnt18"><span class="uline1">au Jibungao Family</span><br />Scene 1, As scroll, The face aprears after shutter effect.</div>
+</div>
+
+<div class="imgBox img08 wb cm">
+<img src="images/au4.jpg" alt="au Jibungao Family 2person" class="a" />
+<div class="b c_wht fnt18"><span class="uline1">au Jibungao Family</span><br />Scene 2, Cakes come falling a lot to scroll the way.</div>
+</div>
+
+<div class="imgBox img09 wb cm">
+<img src="images/au5.gif" alt="au Jibungao Family 6person" class="a" />
+<div class="b fnt18 c_wht"><span class="uline1">au Jibungao Family</span><br />Scene 5, family portrait.</div>
+</div>
+
+<div class="imgBox img10 wb cm">
+<img src="images/au6.gif" alt="au Jibungao Family 10 person" class="a" />
+<div class="b fnt18 c_wht"><span class="uline1">au Jibungao Family</span><br />Final Scene, Wild party in Japanese style.</div>
+</div>
+
+<div class="imgBox img11 wb cm">
+<img src="images/au7.jpg" alt="au Jibungao Family ending" class="a" />
+<div class="b fnt18 c_wht"><span class="uline1">au Jibungao Family</span><br />Ending</div>
+</div>
+
+<div class="imgBox img12 ot ps">
+<img src="images/card.jpg" alt="Business Card" class="a" />
+<div class="b fnt24 c_purple"><span class="uline2">Business Card</span><br />Contact me: info(a)unodos.jp</div>
+</div>
+
+<div class="imgBox img24 ot cm">
+<img src="images/knit1.jpg" alt="mayumi torio" class="a" />
+<div class="b fnt48 c_wht"><span class="uline2">Mayumi Torio </span><br />2010-11A/W HEART. Designed the graphic embroidery part of Knit One-piece dress.</div>
+</div>
+
+<div class="imgBox img25 ot cm">
+<img src="images/knit2.jpg" alt="mayumi torio" class="a" />
+<div class="b fnt32 c_wht"><span class="uline1">Mayumi Torio</span><br />Designed the graphic embroidery part of Knit One-piece dress.</div>
+</div>
+
+
+<div class="imgBox img23 ot ps">
+<img src="images/tshirt2.jpg" alt="alt desinal shirt black" class="a" />
+<div class="b fnt32 c_wht"><span class="uline2">Rich Black Flag Tshirt</span><br />Tshirt manipulated the logo of hard core band "Black Flag". Promotional item for ALT DENIAL SHIRT.</div>
+</div>
+
+<div class="imgBox img22 ot ps">
+<img src="images/tshirt1.jpg" alt="alt desinal shirt white" class="a" />
+<div class="b fnt18"><span class="uline1">Rich Black Flag Tshirt</span><br />Tshirt manipulated the logo of "Black Flag".</div>
+</div>
+
+
+<div class="imgBox img51 wb ps"><img src="images/tumblr1.gif" alt="tumblr1" class="a" />
+<div class="b fnt20 c_wht"><span class="uline1">tumblr1</span> <br />Original tumblr theme.</div>
+</div>
+
+<div class="imgBox img19 wb ps">
+<img src="images/cart1.jpg" alt="cartcobain" class="a" />
+<div class="b c_wht fnt32"><span class="uline1">Cart Cobain</span><br />Web site for People who searched wrong with "Cart" and Kurt of Kurt Cobain<br /><span class="italic">Personal work</span></div>
+</div>
+
+<div class="imgBox img20 wb ps">
+<img src="images/cart2.jpg" alt="mc-cart-ney" class="a" />
+<div class="b fnt18 c_wht"><span class="uline1">Paul Mc-Cart-ney</span><br />Paul Mc-Cart-ney's face with "CART" button.<br /><span class="italic">Personal work</span></div>
+</div>
+
+<div class="imgBox img21 wb ps">
+<img src="images/cart3.jpg" alt="rin-go" class="a" />
+<div class="b fnt18 c_wht"><span class="uline1">Rin-Go Starr</span><br />Rin-go made of "GO" button.<br /><span class="italic">Personal work</span></div>
+</div>
+
+<div class="imgBox img52 ps wb">
+<img src="images/cart4.jpg" alt="cartrussell" class="a" />
+<div class="b fnt12 c_wht"><span class="uline1">Cart Russell</span><br />Web site for People who searched wrong with "Cart" and Kurt of Kurt Russell<br /><span class="italic">Personal work</span></div>
+</div>
+
+
+<div class="imgBox img13 wb cm">
+<img src="images/dv1.jpg" alt="glaceau Vitamin Water Daily Vitamins" class="a" />
+<div class="b fnt56 c_wht"><span class="uline1">daily vitamins</span><br />A Campaign site for glaceau vitamin water.<br />
+<span class="italic">Role: Art direction.</span></div>
+</div>
+
+<div class="imgBox img14 wb cm">
+<img src="images/dv2.jpg" alt="glaceau Vitamin Water Daily Vitamins kodomo hipphop" class="a" />
+<div class="b fnt48"><span class="uline1">daily vitamins<br /></span>A content for daily vitamins, features Rapper Illreme's Cartoon. Title image, contains sampling from Newspaper.</div>
+</div>
+
+<div class="imgBox img15 wb cm">
+<img src="images/dv3.jpg" alt="glaceau Vitamin Water Daily Vitamins sado" class="a" />
+<div class="b fnt20"><span class="uline1">daily vitamins</span><br />Title image for a content, "Sa-do" Story about Sauna.<br /></div>
+</div>
+
+<div class="imgBox img16 wb cm">
+<img src="images/dv4.jpg" alt="glaceau Vitamin Water Daily Vitamins kankan" class="a" />
+<div class="b fnt20"><span class="uline1">daily vitamins</span><br />Title image for a content, "Kankan Diary" Chief editor's diary</div>
+</div>
+
+<div class="imgBox img17 ot cm">
+<img src="images/dv5.jpg" alt="glaceau Vitamin Water Daily Vitamins sticker" class="a" />
+<div class="b fnt24"><span class="uline1">daily vitamins</span><br />Sticker, made to promote the site.</div>
+</div>
+
+<div class="imgBox img18 wb cm">
+<img src="images/dv6.jpg" alt="glaceau Vitamin Water Daily Vitamins free sozai" class="a" />
+<div class="b fnt40"><span class="uline2">daily vitamins</span><br />Title image for a content "Jiyusugiru Free Sozai shu", Too freedom Free StockPhoto</div>
+</div>
+
+
+<div class="imgBox img48 ps ot"><img src="images/hifi1.jpg" alt="hi-fidelity sticker black" class="a" />
+<div class="b c_wht fnt32"><span class="uline1">Hi Fidelity Sticker</span><br />A Sticker consist of vintage Stereo or Hi-fi logo of old days. </div>
+</div>
+
+<div class="imgBox img49 ps ot"><img src="images/hifi2.jpg" alt="hi-fidelity sticker  white" class="a" />
+<div class="b fnt32"><span class="uline1">Hi Fidelity Sticker</span><br />A Sticker consist of vintage Stereo or Hi-fi logo of old days.</div>
+</div>
+
+<div class="imgBox img26 ps wb"><img src="images/tumblr2.jpg" alt="tumblr" class="a" />
+<div class="b fnt18 c_wht"><span class="uline1">tumblr2</span><br />Another Tumblr theme. Homage to GIF Culture and Evan Roth's C.R.E.A.M. </div></div>
+
+
+<div class="imgBox img47 wb ps"><img src="images/pf.jpg" alt="online portfolio" class="a" />
+<div class="b fnt24 c_wht"><span class="uline2">Old Portfolio</span><br /></div>
+</div>
+
+<div class="imgBox img46 wb ps"><img src="images/unodos.gif" alt="unodos" class="a" />
+<div class="b fnt24 c_wht"><span class="uline2">unodos</span><br />Previous version, using original font.</div>
+</div>
+
+
+<div class="imgBox img50 wb ps"><img src="images/blog.jpg" alt="blog" class="a" />
+<div class="b fnt24"><span class="uline1">Blog</span><br />Placed blogparts (Widget) look like "B L O G"</div>
+</div>
+
+<div class="imgBox img27 wb cm"><img src="images/marefumi1.jpg" alt="marefumi komura" class="a" />
+<div class="b fnt56 c_wht"><span class="uline2">Marefumi Komura</span><br />Artist Marefumi Komura's Website.</div></div>
+
+<div class="imgBox img28 wb cm"><img src="images/marefumi2.jpg" alt="marefumi komura" class="a" />
+<div class="b fnt40 c_wht"><span class="uline1">Marefumi Komura</span><br />
+Artist Marefumi Komura's Website<br />
+<span class="italic">Role: Design, Coding</span></div></div>
+
+<div class="imgBox img29 wb cm"><img src="images/kyoto.jpg" alt="kyoto zokei" class="a" />
+<div class="b fnt20"><span class="uline1">Kyoto University of Art and Design</span><br />Website. Desgined mass production design of the lower page<br />Role: Design</div></div>
+
+<div class="imgBox img30 wb cm"><img src="images/spaceshower1.jpg" alt="spaceshower tv" class="a" />
+<div class="b fnt24 c_wht"><span class="uline1">SPACE SHOWER TV</span><br />SPACE SHOWER TV's 20th Anniversary Site.<br />
+<span class="italic">Role: Art Direction, Coding</span></div></div>
+
+<div class="imgBox img31 wb cm"><img src="images/spaceshower2.jpg" alt="spacewhower tv" class="a" />
+<div class="b fnt40 c_wht"><span class="uline1">SPACE SHOWER TV</span><br />2010 Video Music Awards Site<br />
+<span class="italic">Role: Design,Coding</span></div></div>
+
+<div class="imgBox img32 wb cm"><img src="images/valuenavi.jpg" alt="valuenavi" class="a" />
+<div class="b fnt20"><span class="uline1">valuenavi</span><br />Gakken's Shopping Site.<br />
+<span class="italic">Role: Art Direction</span></div>
+</div>
+
+<div class="imgBox img33 ps ot"><img src="images/font.gif" alt="font" class="a" />
+<div class="b fnt24 c_wht"><span class="uline1">Original Font</span></div>
+</div>
+
+<div class="imgBox img34 wb cm"><img src="images/klap1.jpg" alt="klap" class="a" />
+<div class="b fnt56 c_wht"><span class="uline1">Klap</span><br />Internet radio "Klap", by Sega Sammy Media<br />
+<span class="italic">Role: Art Direction</span></div>
+</div>
+
+<div class="imgBox img35 wb cm"><img src="images/klap2.jpg" alt="klap" class="a" />
+<div class="b fnt40"><span class="uline1">Klap</span><br />Podcast Page.<br />
+</div>
+</div>
+
+<div class="imgBox img36 wb cm"><img src="images/klap3.jpg" alt="klap" class="a" />
+<div class="b fnt32 c_pink3"><span class="uline1">Klap</span><br />A radio program page for internet radio "Klap"<br />
+<span class="italic">Role:Web Direction, Design</span></div>
+</div>
+
+<div class="imgBox img37 wb cm"><img src="images/klap4.gif" alt="klap" class="a" />
+<div class="b fnt14 c_wht"><span class="uline1">Klap</span><br />Various Internet Radio Programs。Using the customized version of then ongoing SNS project's specification.<br />
+<span class="italic">Role: Web Direction</span></div>
+</div>
+
+<div class="imgBox img40 ps ot"><img src="images/atipika2.jpg" alt="atipikaJapan" class="a" />
+<div class="b c_wht fnt24"><span class="uline1">AtipikaJapan</span><br />A Book Project by Spanish Design Studio.<br />Portfolio section features Original Tshirts.<br />Unfortunately book was never released.<br /><span class="italic">Personal work</span></div>
+</div>
+
+<div class="imgBox img39 ps ot"><img src="images/atipika1.jpg" alt="atipikaJapan" class="a" />
+<div class="b c_red1 fnt24"><span class="uline1">AtipikaJapan</span><br />A Book Project by Spanish Studio<br />
+Original Art Work (Book was never released)<br /><span class="italic">Personal work</span></div>
+</div>
+
+
+<div class="imgBox img41 ps wb"><img src="images/at2000.jpg" alt="at2000 Tshirts" class="a" />
+<div class="b fnt24 c_wht"><span class="uline1">Home Page</span><br />1999-2004. 2002 Version<br /><span class="italic">Personal work</span></div>
+</div>
+
+<div class="imgBox img42 ps wb"><img src="images/at2000_1.jpg" alt="at2000 1999" class="a" />
+<div class="b fnt24 c_wht"><span class="uline1">1999</span><br />Synchronized animation of Flash in between multiple windows.<br /><span class="italic">Personal work</span></div>
+</div>
+
+<div class="imgBox img43 ps wb"><img src="images/at2000_2.jpg" alt="at2000 1999 THE THING" class="a" />
+<div class="b fnt18 c_wht"><span class="uline1">1999</span><br />Synchronized animation of Flash in between multiple windows.<br /><span class="italic">Personal work</span></div>
+</div>
+
+<div class="imgBox img44 ps wb"><img src="images/at2000_3.jpg" alt="at2000 2000" class="a" />
+<div class="b fnt18 c_wht"><span class="uline1">1998</span><br />Pop-up window work.<br /><span class="italic">Personal work</span></div>
+</div>
+
+<!--<div class="imgBox img04 wb cm">
+<img src="images/nocon.gif" width="350" alt="No Continue Kid" class="a" />
+<div class="b fnt14 c_wht"><span class="uline2">No Con</span><br />
+Title Design for each contents, parody of vintage games with respect.<br />
+<span class="italic">Role: Design</span></div>-->
+
+</div>
+
+
+</div>
+
+<div id="footer">
+<p></p>
+</div>
+
+</div>
+</body>
+</html>
