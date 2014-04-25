@@ -267,6 +267,7 @@ a:active {
 
 
 /*-----------------------------------------------------------------------------header---*/
+/*
 #header {
 	width:1400px;
 	height:187px;
@@ -276,6 +277,7 @@ a:active {
 	margin:0;
 	padding:0;
 }
+*/
 
 
 .name {
@@ -304,7 +306,7 @@ a:active {
 .content {
 	/* position:absolute; top:187px; */
 	/* position:absolute; top:315px; nocon kid*/
-	position:absolute; top:380px;
+	position:absolute; top:250px;
 	clear:both;
 	width:1260px;
 	margin: 0;
